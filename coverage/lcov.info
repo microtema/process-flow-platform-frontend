@@ -101,7 +101,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/mtema/Documents/DEVELOPER/PROJECTS/process-flow/process-flow-platform/frontend/src/router/index.ts
+SF:/Users/mtema/Documents/DEVELOPER/PROJECTS/process-flow/process-flow-platform/frontend/src/router/app.ts
 FN:16,(anonymous_0)
 FNF:1
 FNH:0
@@ -118,7 +118,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/mtema/Documents/DEVELOPER/PROJECTS/process-flow/process-flow-platform/frontend/src/store/index.ts
+SF:/Users/mtema/Documents/DEVELOPER/PROJECTS/process-flow/process-flow-platform/frontend/src/store/app.ts
 FNF:0
 FNH:0
 DA:1,0
@@ -129,7 +129,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/mtema/Documents/DEVELOPER/PROJECTS/process-flow/process-flow-platform/frontend/src/views/index.ts
+SF:/Users/mtema/Documents/DEVELOPER/PROJECTS/process-flow/process-flow-platform/frontend/src/views/app.ts
 FNF:0
 FNH:0
 DA:1,0
