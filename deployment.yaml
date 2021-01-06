@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: microtema/process-flow-platform-frontend:0.1.0
+          image: microtema/process-flow-platform-frontend:0.1.1
           ports:
             - containerPort: 4200
 ---
