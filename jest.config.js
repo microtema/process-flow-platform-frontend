@@ -3,4 +3,9 @@ module.exports = {
   transform: {
     '^.+\\.vue$': 'vue-jest',
   },
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
+  collectCoverage: true,
+  collectCoverageFrom: ['**/*.{ts,vue}', '!**/node_modules/**'],
 };
