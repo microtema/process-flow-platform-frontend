@@ -1,4 +1,4 @@
 import Home from './home/Home.vue';
-import About from './about/About.vue';
+import Definition from './definition/Definition.vue';
 
-export { Home, About };
+export { Home, Definition };

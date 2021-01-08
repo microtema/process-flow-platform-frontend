@@ -10,3 +10,23 @@
 
 # push docker image
 `docker push microtema/process-flow-platform-frontend:1.0.0`
+
+# Authentication and User Management 
+> Okta has Authentication and User Management APIs that reduce development time with instant-on, 
+> scalable user infrastructure. 
+> Okta's intuitive API and expert support make it easy for developers to authenticate, 
+> manage and secure users and roles in any application.
+
+## Okta settingss
+
+> Get started with our SDKs, documentation, and sample apps at developer.okta.com/docs.
+
+Client ID:          0oa3h0mq2kwRxe9hO5d6
+Issuer:             https://dev-1065782.okta.com/oauth2/default
+Domain:             dev-1065782.okta.com
+Application name:   process-flow
+Application type:   SPA
+
+# env
+ISSUER=https://dev-1065782.okta.com/oauth2/default
+CLIENT_ID=0oa3h0mq2kwRxe9hO5d6

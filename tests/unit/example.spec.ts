@@ -20,7 +20,7 @@ describe('HelloWorld.vue', () => {
       props: { msg },
     });
 
-    const sut = wrapper.vm as HelloWorldComponent;
+    const sut = wrapper.vm; // as HelloWorldComponent;
 
     expect(sut.msg).toEqual(msg);
   });

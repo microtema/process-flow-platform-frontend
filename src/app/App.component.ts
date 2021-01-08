@@ -1,10 +1,10 @@
 import { Options, Vue } from 'vue-class-component';
-import { Home, About } from '@/views'; // @ is an alias to /src
+import { Home, Definition } from '@/views'; // @ is an alias to /src
 
 @Options({
   components: {
     Home,
-    About,
+    Definition,
   },
 })
 export default class AppComponent extends Vue {
