@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
-import HelloWorld from '@/components/hello-world/HelloWorld.vue';
-import HelloWorldComponent from '@/components/hello-world/HelloWorld.component';
+import HelloWorldComponent from '../../src/components/hello-world/HelloWorld.component';
+import HelloWorld from '../../src/components/hello-world/HelloWorld.vue';
 
 describe('HelloWorld.vue', () => {
   it('verify html', () => {
@@ -20,18 +20,16 @@ describe('HelloWorld.vue', () => {
       props: { msg },
     });
 
-    const sut = wrapper.vm; // as HelloWorldComponent;
+    const sut = wrapper.vm as never as HelloWorldComponent;
 
     expect(sut.msg).toEqual(msg);
   });
 
   it('renders props.msg when passed', () => {
-    const msg = 'new message';
-
+    const msg = 'eva learnt test management';
     const wrapper = shallowMount(HelloWorld, {
       props: { msg },
     });
-
     expect(wrapper.text()).toMatch(msg);
   });
 });
