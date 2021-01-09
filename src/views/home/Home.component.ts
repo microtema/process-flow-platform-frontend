@@ -1,9 +1,10 @@
-import { Options, Vue } from 'vue-class-component';
-import HelloWorld from '@/components/hello-world/HelloWorld.vue'; // @ is an alias to /src
+import Vue from 'vue'
+import Component from 'vue-class-component'
+import HelloWorld from '@/components/hello-world/HelloWorld.vue'
 
-@Options({
+@Component({
   components: {
-    HelloWorld,
-  },
+    HelloWorld
+  }
 })
 export default class HomeComponent extends Vue {}

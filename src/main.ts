@@ -1,14 +1,17 @@
-import { createApp } from 'vue';
-import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '@fortawesome/fontawesome-free/css/all.css';
+import Vue from 'vue'
+import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import '@fortawesome/fontawesome-free/css/all.css'
 
-import App from './app/App.vue';
-import './registerServiceWorker';
-import router from './router';
-import store from './store';
+import App from './app/App.vue'
+import './registerServiceWorker'
+import router from './router'
+import store from './store'
 
-createApp(App)
-  .use(store)
-  .use(router)
-  .mount('#app');
+Vue.config.productionTip = false
+
+new Vue({
+  router,
+  store,
+  render: h => h(App)
+}).$mount('#app')

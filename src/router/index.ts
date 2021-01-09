@@ -1,22 +1,45 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-import { Home } from '@/views';
+import Vue from 'vue'
+import VueRouter, { RouteConfig } from 'vue-router'
+import { Home, Callback } from '@/views'
 
-const routes: Array<RouteRecordRaw> = [
+Vue.use(VueRouter)
+
+const routes: Array<RouteConfig> = [
   {
     path: '/',
     name: 'Home',
     component: Home,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/definition',
     name: 'Definition',
     component: () => import('../views/definition/Definition.vue'),
+    meta: {
+      requiresAuth: true
+    }
   },
-];
+  {
+    path: '/callback',
+    name: 'Callback',
+    component: Callback,
+    meta: {
+      requiresAuth: false
+    }
+  }
+]
 
-const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes,
-});
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes
+})
 
-export default router;
+router.beforeEach((to, from, next) => {
+  console.log('to', to.name, 'from', from.name)
+  next()
+})
+
+export default router

@@ -1,10 +1,9 @@
-import { Options, Vue } from 'vue-class-component';
+import Vue from 'vue'
+import Component from 'vue-class-component'
+import { Prop } from 'vue-property-decorator'
 
-@Options({
-  props: {
-    msg: String,
-  },
-})
+@Component
 export default class HelloWorldComponent extends Vue {
+  @Prop()
   msg!: string
 }

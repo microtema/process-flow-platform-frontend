@@ -1,19 +1,20 @@
-import { Options, Vue } from 'vue-class-component';
-import ProcessDefinitionApiGateway from './ProcessDefinition.api-gateway';
-import ProcessDefinitionModel from './process-definition.model';
+import Vue from 'vue'
+import Component from 'vue-class-component'
+import ProcessDefinitionApiGateway from './ProcessDefinition.api-gateway'
+import ProcessDefinitionModel from './process-definition.model'
 
-@Options({
-  components: {},
+@Component({
+  components: {}
 })
 export default class ProcessDefinitionComponent extends Vue {
   apiGateway: ProcessDefinitionApiGateway = new ProcessDefinitionApiGateway();
 
   entries: Array<ProcessDefinitionModel> = [];
 
-  mounted() {
+  mounted () {
     this.apiGateway.query().subscribe((it) => {
-      const { content } = it;
-      this.entries = content;
-    });
+      const { content } = it
+      this.entries = content
+    })
   }
 }

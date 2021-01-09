@@ -1,5 +1,5 @@
-const ISSUER = 'https://dev-1065782.okta.com/oauth2/default';
-const CLIENT_ID = '0oa3h0mq2kwRxe9hO5d6';
+const ISSUER = 'https://dev-1065782.okta.com/oauth2/default'
+const CLIENT_ID = '0oa3h0mq2kwRxe9hO5d6'
 
 export default {
   oidc: {
@@ -9,10 +9,10 @@ export default {
     scopes: ['openid', 'profile', 'email'],
     pkce: true,
     testing: {
-      disableHttpsCheck: false,
-    },
+      disableHttpsCheck: false
+    }
   },
   resourceServer: {
-    messagesUrl: 'http://localhost:8000/api/rest/definition',
-  },
-};
+    messagesUrl: 'http://localhost:8000/api/rest/definition'
+  }
+}
