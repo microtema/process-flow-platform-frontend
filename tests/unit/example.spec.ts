@@ -1,5 +1,4 @@
-import { shallowMount } from '@vue/test-utils'
-import HelloWorldComponent from '@/components/hello-world/HelloWorld.component'
+import {shallowMount} from '@vue/test-utils'
 import HelloWorld from '@/components/hello-world/HelloWorld.vue'
 
 describe('HelloWorld.vue', () => {

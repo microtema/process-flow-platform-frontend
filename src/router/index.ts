@@ -5,12 +5,9 @@ import {OktaAuth} from '@okta/okta-auth-js'
 import {Home} from '@/views'
 import Axios from 'axios-observable'
 
-const ISSUER = 'https://dev-1065782.okta.com/oauth2/default'
-const CLIENT_ID = '0oa3h0mq2kwRxe9hO5d6'
-
 const oktaAuth = new OktaAuth({
-  issuer: ISSUER,
-  clientId: CLIENT_ID,
+  issuer: process.env.OKTA_OAUTH2_ISSUER || 'https://dev-1065782.okta.com/oauth2/default',
+  clientId: process.env.OKTA_OAUTH2_CLIENTID || '0oa3h0mq2kwRxe9hO5d6',
   redirectUri: window.location.origin + '/implicit/callback',
   scopes: ['openid', 'profile', 'email']
 })
@@ -48,8 +45,8 @@ const router = new VueRouter({
   routes
 })
 
-const onAuthRequired = async (from: any, to: any, next: any) => {
-  if (from.matched.some((record: any) => record.meta.requiresAuth) && !(await Vue.prototype.$auth.isAuthenticated())) {
+const onAuthRequired = async (from, to, next) => {
+  if (from.matched.some(record => record.meta.requiresAuth) && !(await Vue.prototype.$auth.isAuthenticated())) {
     await Vue.prototype.$auth.signInWithRedirect()
   } else {
     const accessToken = await Vue.prototype.$auth.getAccessToken()

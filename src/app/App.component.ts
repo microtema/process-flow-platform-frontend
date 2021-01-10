@@ -9,8 +9,6 @@ import {Definition, Home} from '@/views'
   }
 })
 export default class AppComponent extends Vue {
-  user: any = {};
-
   login() {
     Vue.prototype.$auth.signInWithRedirect()
   }
