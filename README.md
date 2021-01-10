@@ -21,12 +21,14 @@
 
 > Get started with our SDKs, documentation, and sample apps at developer.okta.com/docs.
 
-Client ID:          0oa3h0mq2kwRxe9hO5d6
-Issuer:             https://dev-1065782.okta.com/oauth2/default
-Domain:             dev-1065782.okta.com
-Application name:   process-flow
-Application type:   SPA
+Client ID:          0oa3h0mq2kwRxe9hO5d6 Issuer:             https://dev-1065782.okta.com/oauth2/default
+Domain:             dev-1065782.okta.com Application name:   process-flow Application type:   SPA
+
+# API Token
+
+message-flow-api:   00mw6etKkg5WP4d8kTQIE7RzVb9AvuK938iiB3u8ND
 
 # env
+
 ISSUER=https://dev-1065782.okta.com/oauth2/default
 CLIENT_ID=0oa3h0mq2kwRxe9hO5d6

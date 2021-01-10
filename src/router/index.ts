@@ -1,8 +1,22 @@
 import Vue from 'vue'
-import VueRouter, { RouteConfig } from 'vue-router'
-import { Home, Callback } from '@/views'
+import VueRouter, {RouteConfig} from 'vue-router'
+import OktaVue, {LoginCallback} from '@okta/okta-vue'
+import {OktaAuth} from '@okta/okta-auth-js'
+import {Home} from '@/views'
+import Axios from 'axios-observable'
+
+const ISSUER = 'https://dev-1065782.okta.com/oauth2/default'
+const CLIENT_ID = '0oa3h0mq2kwRxe9hO5d6'
+
+const oktaAuth = new OktaAuth({
+  issuer: ISSUER,
+  clientId: CLIENT_ID,
+  redirectUri: window.location.origin + '/implicit/callback',
+  scopes: ['openid', 'profile', 'email']
+})
 
 Vue.use(VueRouter)
+Vue.use(OktaVue, {oktaAuth})
 
 const routes: Array<RouteConfig> = [
   {
@@ -22,12 +36,9 @@ const routes: Array<RouteConfig> = [
     }
   },
   {
-    path: '/callback',
+    path: '/implicit/callback',
     name: 'Callback',
-    component: Callback,
-    meta: {
-      requiresAuth: false
-    }
+    component: LoginCallback
   }
 ]
 
@@ -37,9 +48,17 @@ const router = new VueRouter({
   routes
 })
 
-router.beforeEach((to, from, next) => {
-  console.log('to', to.name, 'from', from.name)
-  next()
-})
+const onAuthRequired = async (from: any, to: any, next: any) => {
+  if (from.matched.some((record: any) => record.meta.requiresAuth) && !(await Vue.prototype.$auth.isAuthenticated())) {
+    await Vue.prototype.$auth.signInWithRedirect()
+  } else {
+    const accessToken = await Vue.prototype.$auth.getAccessToken()
+    Axios.defaults.headers.common.Authorization = `Bearer ${accessToken}`
+    sessionStorage.setItem('Authorization', Axios.defaults.headers.common.Authorization)
+    next()
+  }
+}
+
+router.beforeEach(onAuthRequired)
 
 export default router

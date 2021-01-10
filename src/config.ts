@@ -5,7 +5,7 @@ export default {
   oidc: {
     clientId: CLIENT_ID,
     issuer: ISSUER,
-    redirectUri: 'http://localhost:8080/login/callback',
+    redirectUri: 'http://localhost:8080/implicit/callback',
     scopes: ['openid', 'profile', 'email'],
     pkce: true,
     testing: {

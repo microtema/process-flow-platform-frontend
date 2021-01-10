@@ -5,7 +5,7 @@
   "main": "build/server.js",
   "scripts": {
     "build": "tsc --project ./",
-    "postbuild": "cp -r ../dist dist",
+    "xpostbuild": "cp -r ../dist dist",
     "start:dev": "nodemon server.ts",
     "start": "ts-node ."
   },
@@ -13,6 +13,7 @@
   "author": "Mario Tema (microtema.de)",
   "license": "ISC",
   "dependencies": {
+    "@okta/okta-vue": "^3.1.0",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "http-proxy": "^1.18.1"
