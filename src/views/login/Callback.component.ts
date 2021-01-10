@@ -3,7 +3,7 @@ import Component from 'vue-class-component'
 
 @Component
 export default class CallbackComponent extends Vue {
-  mounted() {
+  mounted () {
     console.log('callback...')
   }
 }

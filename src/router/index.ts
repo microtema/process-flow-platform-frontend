@@ -1,8 +1,8 @@
 import Vue from 'vue'
-import VueRouter, {RouteConfig} from 'vue-router'
-import OktaVue, {LoginCallback} from '@okta/okta-vue'
-import {OktaAuth} from '@okta/okta-auth-js'
-import {Home} from '@/views'
+import VueRouter, { RouteConfig } from 'vue-router'
+import OktaVue, { LoginCallback } from '@okta/okta-vue'
+import { OktaAuth } from '@okta/okta-auth-js'
+import { Home } from '@/views'
 import Axios from 'axios-observable'
 
 const oktaAuth = new OktaAuth({
@@ -13,7 +13,7 @@ const oktaAuth = new OktaAuth({
 })
 
 Vue.use(VueRouter)
-Vue.use(OktaVue, {oktaAuth})
+Vue.use(OktaVue, { oktaAuth })
 
 const routes: Array<RouteConfig> = [
   {

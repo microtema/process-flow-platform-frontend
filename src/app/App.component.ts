@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
-import {Definition, Home} from '@/views'
+import { Definition, Home } from '@/views'
 
 @Component({
   components: {
@@ -9,11 +9,11 @@ import {Definition, Home} from '@/views'
   }
 })
 export default class AppComponent extends Vue {
-  login() {
+  login () {
     Vue.prototype.$auth.signInWithRedirect()
   }
 
-  logout() {
+  logout () {
     Vue.prototype.$auth.signOut()
   }
 }
